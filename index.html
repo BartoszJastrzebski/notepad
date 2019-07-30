@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Notepad - Offline capable</title>
+    <title>Notepad - -</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#3F51B5">
@@ -8,6 +8,7 @@
     <meta name="keywords" content="note,offline,mobile,web,notepad,android,ios,desktop" />
     <meta name="author" content="Amit Merchant">
     <meta name="application-name" content="Notepad" />
+    <Link href="css/fontello.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="icon" href="favicon.ico">
@@ -24,12 +25,13 @@
                 <span class="icon-bar"></span>
               </button>
             </span>
-            <span><a class="navbar-brand app-heading" href="#">Notepad - Offline ready</a></span>
-            <span><button type="button" class="btn btn-custom" id="clearNotes">Clear</button></span>
-            <span id="mode" title="Enable dark mode">🌘</span>
+            <span><a class="navbar-brand app-heading" href="#">Notepad -<span class="blink">-</span></a></span>
+            <!--<span><button type="button" class="btn btn-custom" id="clearNotes">Clear</button></span>-->
+            <!-- <span id="mode" title="Enable dark mode">Dark mode</span> -->
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
+            <li><a href="#save" data-toggle="modal" class="icon-floppy">Save to file</a></li>
             <li><a href="#about" data-toggle="modal" data-target="#myModal">About</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -54,9 +56,6 @@
           <div class="modal-body">
             <p>An offline capable notepad powered by ServiceWorker</p>
             <p><a href="https://github.com/amitmerchant1990/notepad" target="_blank">Go to the repository</a></p>
-            <style>.bmc-button img{width: 27px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{line-height: 36px !important;height:37px !important;text-decoration: none !important;display:inline-flex !important;color:#ffffff !important;background-color:#000000 !important;border-radius: 3px !important;border: 1px solid transparent !important;padding: 1px 9px !important;font-size: 23px !important;letter-spacing: 0.6px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#ffffff !important;}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
-            <p>Or if you liked using this app,
-            <p style="text-align:center;"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/5Zn8Xh3l9"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px">Buy me a coffee</span></a></p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

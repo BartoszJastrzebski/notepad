@@ -10,14 +10,12 @@ $(document).ready(function(){
 	- Write notes which then saved to the localStorage.
 	- Installable on supported browsers for offline usage.
 	- "Add To Home Screen" feature on Android supported devices to launch the app from home screen.
-	- Dark mode.
 	- Privacy focused - We'll never collect your precious data.
 	- Light-weight - Loads almost instantly.
 
 	** Start writing your notes **`;
 	
-	let darkmodeText = 'Enable dark mode';
-	let lightmodeText = 'Enable light mode';
+
 
 	if (localStorage.getItem('note') && localStorage.getItem('note')!='') {
 		let noteItem = localStorage.getItem('note');
@@ -26,47 +24,15 @@ $(document).ready(function(){
 		$('#note').val(initialText);
 	}
 
-	if (localStorage.getItem('mode') && localStorage.getItem('mode')!='') {
-		if (localStorage.getItem('mode') == 'dark') {
-			$(document.body).addClass('dark');
-			$('#mode').html('☀️').attr('title', lightmodeText);
-		} else {
-			$(document.body).removeClass('dark');
-			$('#mode').html('🌘').attr('title', darkmodeText);
-		}
-	}
-
-	$('#clearNotes').on('click', function(){
-		$('#note').val('').focus();
-			localStorage.setItem("note", '');
-		});
-
-		$('.cookie_box_close').click(function(){
-		$('.adFooter').animate({opacity:0 }, "slow");
-			return false;
-		});
-
-		$('#mode').click(function(){
-		$(document.body).toggleClass('dark');
-		let bodyClass = $(document.body).attr('class');
-
-		if (bodyClass == 'dark') {
-			localStorage.setItem('mode', 'dark');
-			$(this).html('☀️').attr('title', lightmodeText);
-		} else {
-			localStorage.setItem('mode', 'light');
-			$(this).html('🌘').attr('title', darkmodeText);
-		}
-	});
-	
-	window.matchMedia('(prefers-color-scheme: dark)').addListener(({ matches }) => {
-		if (matches) {
-			$(document.body).addClass('dark');
-			localStorage.setItem('mode', 'dark');
-		} else {
-			$(document.body).removeClass('dark');
-			localStorage.setItem('mode', 'light');
-		}
+	$('.blink').each(function() {
+	    var elem = $(this);
+	    setInterval(function() {
+	        if (elem.css('visibility') == 'hidden') {
+	            elem.css('visibility', 'visible');
+	        } else {
+	            elem.css('visibility', 'hidden');
+	        }    
+	    }, 700);
 	});
 
 });
