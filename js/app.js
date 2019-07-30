@@ -35,6 +35,25 @@ $(document).ready(function(){
 	    }, 700);
 	});
 
+	function download(filename, text) {
+	  var element = document.createElement('a');
+	  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+	  element.setAttribute('download', filename);
+
+	  element.style.display = 'none';
+	  document.body.appendChild(element);
+
+	  element.click();
+
+	  document.body.removeChild(element);
+	}
+
+	$('#savefile').click(function() {
+		var filename = $('#savefilename').val();
+		var filecontent = $('#note').val();
+		download(filename, filecontent);
+	});
+
 });
 
 function debounce(func, wait, immediate) 
